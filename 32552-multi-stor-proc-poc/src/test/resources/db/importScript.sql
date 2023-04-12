@@ -10,9 +10,10 @@ CREATE TABLE foo (
     id int
 );
 
-dasdqw 23 rfs q3
+
 CREATE PROCEDURE testOne
     AS BEGIN
+SELECT * FROM foo;
 SELECT * FROM foo;
 END;
 

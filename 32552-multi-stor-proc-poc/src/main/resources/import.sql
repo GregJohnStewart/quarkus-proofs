@@ -6,17 +6,17 @@
 -- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-2');
 -- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-3');
 
-CREATE TABLE foo (
-    id int
-);
-
-
-CREATE PROCEDURE testOne
-    AS BEGIN
-SELECT * FROM foo;
-END;
-
-CREATE PROCEDURE testTwo
-    AS BEGIN
-SELECT * FROM foo;
-END;
+-- CREATE TABLE foo (
+--     id int
+-- );
+--
+--
+-- CREATE PROCEDURE testOne
+--     AS BEGIN
+-- SELECT * FROM foo;
+-- END;
+--
+-- CREATE PROCEDURE testTwo
+--     AS BEGIN
+-- SELECT * FROM foo;
+-- END;
