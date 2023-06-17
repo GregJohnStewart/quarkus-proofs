@@ -16,7 +16,7 @@ dependencies {
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
     testImplementation 'com.github.dasniko:testcontainers-keycloak:2.5.0'
-    testImplementation 'io.quarkus:quarkus-keycloak-admin-client'
+    testImplementation 'io.quarkus:quarkus-keycloak-admin-client-reactive'
 }
 
 group 'org.acme'
