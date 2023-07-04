@@ -14,9 +14,19 @@ public class UriBuilderTest {
     
     private static final String BASE_URL = "http://localhost:6851/some/endpoint";
     private static final String REDIRECT_URL_PARAM_NAME = "redirect_url";
-    private static final String REDIRECT_URL = "http://localhost:3185/some/other/endpoint?extra=fun&more=excitement";
+    private static final String REDIRECT_URL;
     
-    //NOTE:: this was available without extra dependencies
+    static {
+        try {
+            REDIRECT_URL = new URIBuilder("http://localhost:3185/some/other/endpoint")
+                               .setParameter("redirect", "/some/endpoint?another=query")
+                               .build().toString();
+        } catch(URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    //NOTE:: this was not available without extra dependencies
 //    private static final Logger LOG = Logger.getLogger(UriBuilderTest.class.getName());
     
     @Test
