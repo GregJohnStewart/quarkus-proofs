@@ -15,26 +15,26 @@ CREATE TABLE foo
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 
-CREATE PROCEDURE testOne(
-	@input VARCHAR(100)
-)
-AS
-BEGIN
-	SET NOCOUNT ON;
-
-	BEGIN TRY
-	    BEGIN TRANSACTION -- having this transaction causes issues
-		SELECT * FROM foo;
-
-		COMMIT TRANSACTION
-	END TRY
-	BEGIN CATCH
-	    ROLLBACK TRANSACTION
-		SELECT * FROM foo;
-
-	END CATCH
-
-END;
+-- CREATE PROCEDURE testOne(
+-- 	@input VARCHAR(100)
+-- )
+-- AS
+-- BEGIN
+-- 	SET NOCOUNT ON;
+--
+-- 	BEGIN TRY
+-- 	    BEGIN TRANSACTION -- having this transaction causes issues
+-- 		SELECT * FROM foo;
+--
+-- 		COMMIT TRANSACTION
+-- 	END TRY
+-- 	BEGIN CATCH
+-- 	    ROLLBACK TRANSACTION
+-- 		SELECT * FROM foo;
+--
+-- 	END CATCH
+--
+-- END;
 
 	CREATE PROCEDURE testTwo(
 		@input VARCHAR(100)
