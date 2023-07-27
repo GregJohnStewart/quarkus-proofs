@@ -66,3 +66,8 @@ Easily start your Reactive RESTful Web Services
 Create your web page using Quarkus RESTEasy Reactive & Qute
 
 [Related guide section...](https://quarkus.io/guides/qute#type-safe-templates)
+
+
+## Important Guides
+
+ - https://quarkus.io/guides/security-oidc-code-flow-authentication-tutorial
