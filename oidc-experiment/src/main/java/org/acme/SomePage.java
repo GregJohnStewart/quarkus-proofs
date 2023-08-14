@@ -6,6 +6,7 @@ import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -16,8 +17,9 @@ import org.eclipse.microprofile.jwt.JsonWebToken;
 
 import static java.util.Objects.requireNonNull;
 
+@RequestScoped
 @Path("/some-page")
-public class SomePage {
+public class SomePage extends RestInterface {
     
     /**
      * Injection point for the ID Token issued by the OpenID Connect Provider
