@@ -2,7 +2,19 @@
 
 
 
-./gradlew clean build -Pquarkus.container-image.build=true -Pquarkus.container-image.group=test -Pquarkus.container-image.name=host-nw-test
+`./gradlew clean build -Pquarkus.container-image.build=true -Pquarkus.container-image.group=test -Pquarkus.container-image.name=host-nw-test`
+
+```bash
+ bash -c "/usr/bin/docker run --name host_nw_test \
+                                        --network=host \
+                                        -v /etc/oqm/serviceConfig/core/base+station/files:/etc/oqm/serviceConfig/core/base+station/files \
+                                        --env-file /tmp/oqm/serviceConfig/core/base+station/base-station-config.list \
+                                        --add-host host.docker.internal:host-gateway \
+                                        941e83fd20ac"
+```
+
+
+
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
