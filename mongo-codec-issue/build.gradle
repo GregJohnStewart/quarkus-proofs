@@ -8,6 +8,12 @@ repositories {
     mavenLocal()
 }
 
+configurations {
+    compileClasspath {
+        resolutionStrategy.force 'commons-codec:commons-codec:1.9'
+    }
+}
+
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-mongodb-client'
@@ -15,6 +21,27 @@ dependencies {
     implementation 'io.quarkus:quarkus-arc'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
+
+//    implementation('org.mongodb:bson') {
+//        version {
+//            strictly '4.9.1'
+//        }
+//    }
+//    implementation('org.mongodb:mongodb-driver-sync') {
+//        version {
+//            strictly '4.9.1'
+//        }
+//    }
+//    implementation('org.mongodb:mongodb-driver-reactivestreams') {
+//        version {
+//            strictly '4.9.1'
+//        }
+//    }
+//    implementation('org.mongodb:mongodb-driver-core') {
+//        version {
+//            strictly '4.9.1'
+//        }
+//    }
 }
 
 group 'org.acme'
