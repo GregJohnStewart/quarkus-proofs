@@ -8,21 +8,34 @@ repositories {
     mavenLocal()
 }
 
-configurations {
-    compileClasspath {
-        resolutionStrategy.force 'commons-codec:commons-codec:1.9'
-    }
-}
+//configurations {
+//    compileClasspath {
+//        resolutionStrategy.force 'org.mongodb:mongodb-driver-sync:4.9.1'
+//    }
+//}
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-mongodb-client'
+
     implementation 'io.quarkus:quarkus-resteasy-reactive'
     implementation 'io.quarkus:quarkus-arc'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 
-//    implementation('org.mongodb:bson') {
+    //forces the Quarkus lib to use 4.9.1
+    implementation ('io.quarkus:quarkus-mongodb-client'){
+        exclude group: 'org.mongodb', module: 'mongodb-driver-sync'
+    }
+    implementation 'org.mongodb:mongodb-driver-sync:4.9.1'
+
+//    compile ("org.acme:someDependency:1.0"){
+//        exclude group: 'com.google.guava', module: 'guava'
+//    }
+//    compile "com.google.guava:guava:15.0:cdi1.0"
+//
+
+
+//    implementation('org.mongodb:mongodb-driver-sync') {
 //        version {
 //            strictly '4.9.1'
 //        }
