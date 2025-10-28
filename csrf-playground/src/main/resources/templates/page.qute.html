@@ -203,6 +203,8 @@
 			method: method,
 			headers: headers,
 			withCredentials: false,
+			contentType: "application/json; charset=utf-8",
+			data: { "foo": "bar" },
 			success: function(response) {
 				
 				results.prepend(
