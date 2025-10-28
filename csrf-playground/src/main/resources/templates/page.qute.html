@@ -9,68 +9,156 @@
 </head>
 <body data-csrf-token="{inject:csrf.token}">
 
-<form class="testForm">
-	<input type="hidden" name="method" value="POST" />
-	<fieldset>
-		<legend>POST</legend>
+<div style="display: flex">
+	<div>
+		<h2>JSON Submission</h2>
+		<form class="testJsonForm">
+			<input type="hidden" name="method" value="GET" />
+			<fieldset>
+				<legend>GET</legend>
+				
+				<input type="checkbox" id="getJsonIncludeToken" name="includeToken" checked>
+				<label for="getJsonIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="getJsonBadToken" name="badToken">
+				<label for="getJsonBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
+		<form class="testJsonForm">
+			<input type="hidden" name="method" value="POST" />
+			<fieldset>
+				<legend>POST</legend>
+				
+				<input type="checkbox" id="postJsonIncludeToken" name="includeToken" checked>
+				<label for="postIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="postJsonBadToken" name="badToken">
+				<label for="postJsonBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
+		<form class="testJsonForm">
+			<input type="hidden" name="method" value="PUT" />
+			<fieldset>
+				<legend>PUT</legend>
+				
+				<input type="checkbox" id="putJsonIncludeToken" name="includeToken" checked>
+				<label for="putJsonIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="putJsonBadToken" name="badToken">
+				<label for="putJsonBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
+		<form class="testJsonForm">
+			<input type="hidden" name="method" value="PATCH" />
+			<fieldset>
+				<legend>PATCH</legend>
+				
+				<input type="checkbox" id="patchJsonIncludeToken" name="includeToken" checked>
+				<label for="patchJsonIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="patchJsonBadToken" name="badToken">
+				<label for="patchJsonBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
+		<form class="testJsonForm">
+			<input type="hidden" name="method" value="DELETE" />
+			<fieldset>
+				<legend>DELETE</legend>
+				
+				<input type="checkbox" id="deleteJsonIncludeToken" name="includeToken" checked>
+				<label for="deleteJsonIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="deleteJsonBadToken" name="badToken">
+				<label for="deleteJsonBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
 		
-		<input type="checkbox" id="postIncludeToken" name="includeToken" checked>
-		<label for="postIncludeToken">Include Token </label>
+	</div>
+	<div>
+		<h2>HTML Forms</h2>
 		
-		<input type="checkbox" id="postBadToken" name="badToken">
-		<label for="postBadToken">Bad Token</label>
+		<form class="testHtmlForm" method="GET" action="/sub/html">
+			<fieldset>
+				<legend>GET</legend>
+				
+				<input type="checkbox" id="getHtmlIncludeToken" name="includeToken" checked>
+				<label for="getHtmlIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="getHtmlBadToken" name="badToken">
+				<label for="getHtmlBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
 		
-		<button type="submit">Submit</button>
-	</fieldset>
-</form>
-<form class="testForm">
-	<input type="hidden" name="method" value="PUT" />
-	<fieldset>
-		<legend>PUT</legend>
+		<form class="testHtmlForm" method="POST" action="/sub/html">
+			<fieldset>
+				<legend>POST</legend>
+				
+				<input type="checkbox" id="postHtmlIncludeToken" name="includeToken" checked>
+				<label for="postHtmlIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="postHtmlBadToken" name="badToken">
+				<label for="postHtmlBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
 		
-		<input type="checkbox" id="putIncludeToken" name="includeToken" checked>
-		<label for="putIncludeToken">Include Token </label>
+		<form class="testHtmlForm" method="POST" action="/sub/html/put">
+			<input type="hidden" name="_method" value="PUT" />
+			<fieldset>
+				<legend>PUT</legend>
+				
+				<input type="checkbox" id="putHtmlIncludeToken" name="includeToken" checked>
+				<label for="putHtmlIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="putHtmlBadToken" name="badToken">
+				<label for="putHtmlBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
 		
-		<input type="checkbox" id="putBadToken" name="badToken">
-		<label for="putBadToken">Bad Token</label>
+		<form class="testHtmlForm" method="POST" action="/sub/html/patch">
+			<input type="hidden" name="_method" value="PATCH" />
+			<fieldset>
+				<legend>PATCH</legend>
+				
+				<input type="checkbox" id="patchHtmlIncludeToken" name="includeToken" checked>
+				<label for="patchHtmlIncludeToken">Include Token </label>
+				
+				<input type="checkbox" id="putHtmlBadToken" name="badToken">
+				<label for="patchHtmlBadToken">Bad Token</label>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
 		
-		<button type="submit">Submit</button>
-	</fieldset>
-</form>
-<form class="testForm">
-	<input type="hidden" name="method" value="PATCH" />
-	<fieldset>
-		<legend>PATCH</legend>
 		
-		<input type="checkbox" id="patchIncludeToken" name="includeToken" checked>
-		<label for="patchIncludeToken">Include Token </label>
-		
-		<input type="checkbox" id="patchBadToken" name="badToken">
-		<label for="patchBadToken">Bad Token</label>
-		
-		<button type="submit">Submit</button>
-	</fieldset>
-</form>
-<form class="testForm">
-	<input type="hidden" name="method" value="DELETE" />
-	<fieldset>
-		<legend>DELETE</legend>
-		
-		<input type="checkbox" id="deleteIncludeToken" name="includeToken" checked>
-		<label for="deleteIncludeToken">Include Token </label>
-		
-		<input type="checkbox" id="deleteBadToken" name="badToken">
-		<label for="deleteBadToken">Bad Token</label>
-		
-		<button type="submit">Submit</button>
-	</fieldset>
-</form>
+	</div>
+	
+	
+</div>
+
 
 
 
 <hr />
 <div id="results">
-
+	{#if method.or(false)}
+		<p>Successful form submission! {method}</p>
+	{/if}
 </div>
 
 
@@ -111,7 +199,7 @@
 		
 		
 		$.ajax({
-			url: "/hello",
+			url: "/sub/json",
 			method: method,
 			headers: headers,
 			withCredentials: false,
@@ -138,11 +226,31 @@
 		});
 	}
 
-	$(".testForm").on("submit", function (e){
+	$(".testJsonForm").on("submit", function (e){
 		e.preventDefault();
 		let formJq = $(e.target);
 		sendRequest(formJq);
 	});
+	
+	$(".testHtmlForm").on("submit", function (e){
+		let formJq = $(e.target);
+		let includeToken = formJq.find('input[name=includeToken]').is(":checked");
+		let badToken = formJq.find('input[name=badToken]').is(":checked");
+		
+		if(includeToken) {
+			formJq.append(
+				$('<input type="hidden">')
+					.attr("name", "{inject:csrf.parameterName}")
+					.val("{inject:csrf.token}" + (badToken?"foo":""))
+			);
+		}
+		console.log("Setup form for sub.")
+	});
+	
+	
+	
+	
+	
 
 
 </script>
