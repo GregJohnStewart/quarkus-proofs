@@ -15,27 +15,30 @@ public class GreetingResource {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String hello() {
-		return "Hello from Quarkus REST";
+		return "Hello from GET";
 	}
 	
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
 	public String helloPost() {
-		return "Hello from Quarkus REST";
+		return "Hello from POST";
 	}
+	
 	@DELETE
 	@Produces(MediaType.TEXT_PLAIN)
 	public String helloDelete() {
-		return "Hello from Quarkus REST";
+		return "Hello from DELETE";
 	}
+	
 	@PUT
 	@Produces(MediaType.TEXT_PLAIN)
 	public String helloPut() {
-		return "Hello from Quarkus REST";
+		return "Hello from PUT";
 	}
+	
 	@PATCH
 	@Produces(MediaType.TEXT_PLAIN)
 	public String helloPatch() {
-		return "Hello from Quarkus REST";
+		return "Hello from PATCH";
 	}
 }

@@ -120,7 +120,8 @@
 					$('<p>Success!</p>')
 						.append(
 							" " + method + " " +
-							(includeToken ? (badToken?"Bad Token":"Token") : "No Token")
+							(includeToken ? (badToken?"Bad Token":"Token") : "No Token") +
+							" / " + response
 						)
 				);
 			},
