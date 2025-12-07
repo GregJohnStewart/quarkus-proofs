@@ -1,0 +1,60 @@
+
+quarkus:
+  datasource:
+    db-kind: postgresql
+  http:
+    auth:
+      #      permission:
+      #        bearer:
+      #          policy: authenticated
+      #          paths:
+      #            - /api/mgmt/subscriptions
+      #        basic:
+      #          policy: authenticated
+      #          paths:
+      #            - /api/sub/backupFiles
+      proactive: false
+  log:
+    category:
+      "org.wildfly.security":
+        level: TRACE
+        min-level: TRACE
+  security:
+    jdbc: # https://quarkus.io/guides/security-jdbc#configuring-the-application
+      enabled: true
+      principal-query:
+        sql: "SELECT s.id, s.secret, 'basicUser' FROM sub s WHERE CAST(s.id AS text) = ?"
+        bcrypt-password-mapper:
+          enabled: true
+          password-index: 2
+        attribute-mappings:
+          - index: 1
+            to: name
+          - index: 3
+            to: role
+          - index: 3
+            to: roles
+          - index: 3
+            to: groups
+  oidc:
+    application-type: service
+
+
+"%dev":
+  quarkus:
+    log:
+      level: DEBUG
+      category:
+        "org.apache.http.wire":
+          level: DEBUG
+        "io.quarkus.security":
+          level: DEBUG
+"%test":
+  quarkus:
+    log:
+      level: TRACE
+      category:
+        "org.apache.http.wire":
+          level: TRACE
+        "io.quarkus.security":
+          level: TRACE
